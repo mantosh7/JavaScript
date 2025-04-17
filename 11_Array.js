@@ -43,7 +43,8 @@ console.log(array.toString()) // return array into string dataType
 
 const array2 = [60, 70, 80, 90]
 const myAnotherArray = [100, 110, 120]
-console.log(array.concat(array2, myAnotherArray))  //  [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]
+const myAnotherArray2 = [130, 140]
+console.log(array.concat(array2, myAnotherArray, myAnotherArray2))  //  [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140]
 
 console.log(array.slice(2,5))  // [30, 40, 50] return a portion of array. Do not change the original array. 5 is not included.
 
