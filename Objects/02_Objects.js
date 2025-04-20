@@ -2,7 +2,7 @@ const tinderUser1 = new Object()  // => Singleton Object
 const tinderUser2 = {}  // => Non-Singleton Object
 
 //  How to merge Objects ?
-// 1.Way
+// 1st Way
 const obj1 = {1: "a", 2:"b"}
 const obj2 = {3:"c", 4:"d"}
 const obj3 = {5: "e", 6:"f"}
@@ -10,13 +10,13 @@ const obj4 = Object.assign(obj1, obj2, obj3) ;  // obj1 = obj1 + obj2 + obj3
 console.log(obj1)  // { '1': 'a', '2': 'b', '3': 'c', '4': 'd', '5': 'e', '6': 'f' }
 console.log(obj4)  // { '1': 'a', '2': 'b', '3': 'c', '4': 'd', '5': 'e', '6': 'f' }
 
-// 2.Way
+// 2nd Way
 const obj5 = {1: "a", 2:"b"}
 const obj6 = Object.assign({}, obj5, obj2, obj3) 
 console.log(obj6) ;  // { '1': 'a', '2': 'b', '3': 'c', '4': 'd', '5': 'e', '6': 'f' }
 console.log(obj5)  // { '1': 'a', '2': 'b' }
 
-// 3.Way ( spread )
+// 3rd Way ( spread )
 const a = {1: "a", 2:"b"}
 const b = {3:"c", 4:"d"}
 const c = {5: "e", 6:"f"}
