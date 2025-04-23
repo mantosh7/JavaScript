@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning DOM Concepts</title>
+</head>
+<body style="background-color:#212122; color:#fff">
+    <div class="parent">
+        <!-- day list -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+
+    <script>
+
+        // Selecting the parent element and finding out what is inside it 
+        const parent = document.querySelector(".parent")
+        console.log(parent)
+        console.log(parent.children) // HTMLCollection(4) [div.day, div.day, div.day, div.day]
+        console.log(parent.children[1].innerHTML)  // Tuesday
+        console.log(parent.childElementCount)  // 4
+
+        for(let i=0;i<parent.children.length;i++)
+        {
+            console.log(parent.children[i].innerHTML)  // Monday Tuesday Wednesday Thursday
+        }
+
+        // Adding style
+        parent.children[1].style.backgroundColor = "green"
+        parent.children[1].style.padding = "10px"
+
+        // we can also access "first" and "last" element child
+        console.log(parent.firstElementChild.innerHTML)  // Monday
+        console.log(parent.lastElementChild.innerText)  // Thursday
+
+        // We can also access parent and siblings of any element
+        const dayOne = document.querySelector(".day")
+        console.log(dayOne.parentElement)  // can also use : console.log(dayOne.parentNode)
+        console.log(dayOne.nextElementSibling.innerHTML)  // Tuesday
+
+        // We can also find the child nodes of an element
+        console.log("NODES:", parent.childNodes)  // NodeList(11) [text, comment, text, div.day, text, div.day, text, div.day, text, div.day, text]
+    </script>
+</body>
+</html>

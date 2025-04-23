@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning DOM Concepts</title>
+</head>
+<body style="background-color:#212122; color:#fff">
+    
+</body>
+
+<script>
+    // creating new element
+    const div = document.createElement("div")
+    console.log(div)
+
+    // Adding attributes to the newly created element
+    div.className = "main"
+    div.id = "myId"
+    div.style.backgroundColor = "green"
+    div.style.padding = "10px"
+    div.setAttribute("title", "generated title")
+
+    // Difference between 'innerHTML' and 'document.createTextNode()'
+    // => both are used to insert content into the DOM, but they behave very differently.
+
+    // * innerHTML
+    // => Takes a string as input and parses it as HTML.
+    // => Can include actual HTML tags like <b>, <div>, <p>, etc.
+    // => Replaces all existing content inside the element.
+    // => Example : div.innerHTML = "<b>Mantosh Kumar</b>";
+
+    // * document.createTextNode()
+    // => Creates a pure text node, not HTML.
+    // => Even if the text contains HTML-like tags, it will be treated as plain text.
+    // => Safer for adding user-generated content, because it doesn’t parse HTML. Doesn’t replace the entire content — it adds a node (usually used with appendChild()).
+
+    // div.innerHTML = "Mantosh Kumar"
+    const addText = document.createTextNode("Hello World")
+    div.appendChild(addText)
+
+    // How to display the content of newly created element 
+    // => for this we have to append it to its parent node
+    document.body.append(div)
+</script>
+</html>
